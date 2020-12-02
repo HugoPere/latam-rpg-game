@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum personality { AGGRESIVE, TIMID, WISE, CURIOUS, SOLEMN, WILD, SAVAGE, NONSKILL, BOSS }
-public enum attitude { STARTING, ANGRY, HAPPY, PLEASED, AFRAID}
 
-/*
+public enum attitude { STARTING, ANGRY, HAPPY, PLEASED, AFRAID } //ENEMY ONLY
+    /*
      * Personality explanations:
      * Aggresive: Most enemies, they need an aggresive approach and show dominance
      * Timid: Fairies and stuff, need a peaceful approach
@@ -21,14 +20,15 @@ public enum attitude { STARTING, ANGRY, HAPPY, PLEASED, AFRAID}
 public class Enemy_Reasoning : MonoBehaviour
 {
     //Button Texts
-    
+    /*
     public string peaceful_button_1;
-    public string peaceful_button_2;
+    public string peaceful_button_2;*/
+
     public Text peaceful_button_text_1;
     public Text peaceful_button_text_2;
-
+    /*
     public string aggresive_button_1;
-    public string aggresive_button_2;
+    public string aggresive_button_2;*/
     public Text aggresive_button_text_1;
     public Text aggresive_button_text_2;
     //Responses
@@ -124,9 +124,9 @@ public class Enemy_Reasoning : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Upper_Text.text = enemyUnit.Unit_Name + " says...";
         yield return new WaitForSeconds(1f);
-        Upper_Text.text = peaceful_response;
-        peaceful_button_text_1.text = peaceful_button_1;
-        peaceful_button_text_2.text = peaceful_button_2;
+        Upper_Text.text = enemyUnit.peaceful_response;
+        peaceful_button_text_1.text = enemyUnit.peaceful_button_1;
+        peaceful_button_text_2.text = enemyUnit.peaceful_button_2;
         Reasoning_Canvas.SetActive(false);
         friendly_canvas.SetActive(true);
     }
@@ -136,34 +136,65 @@ public class Enemy_Reasoning : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Upper_Text.text = enemyUnit.Unit_Name + " says...";
         yield return new WaitForSeconds(1f);
-        Upper_Text.text = aggresive_response;
-        aggresive_button_text_1.text = aggresive_button_1;
-        aggresive_button_text_2.text = aggresive_button_2;
+        Upper_Text.text = enemyUnit.aggresive_response;
+        aggresive_button_text_1.text = enemyUnit.aggresive_button_1;
+        aggresive_button_text_2.text = enemyUnit.aggresive_button_2;
         Reasoning_Canvas.SetActive(false);
         aggresive_canvas.SetActive(true);
     }
 
     public void ON_peaceful_button_1()
     {
-        Upper_Text.text = peaceful_button_1_response;
-        friendly_canvas.SetActive(false);
-        EndBattle(2);
-
+        if(enemyUnit.personality == personality.CURIOUS || enemyUnit.personality == personality.SOLEMN)
+        {
+            Upper_Text.text = enemyUnit.peaceful_button_1_response;
+            friendly_canvas.SetActive(false);
+            EndBattle(3);
+        }
+        else if (enemyUnit.personality == personality.WISE || enemyUnit.personality == personality.TIMID)
+        {
+            Upper_Text.text = enemyUnit.peaceful_button_1_response;
+            friendly_canvas.SetActive(false);
+            EndBattle(3);
+        }
+        else
+        {
+            Upper_Text.text = enemyUnit.peaceful_button_1_response;
+            friendly_canvas.SetActive(false);
+            EndBattle(2);
+        }
 
     }
 
     public void ON_peaceful_button_2()
     {
-        Upper_Text.text = peaceful_button_2_response;
-        friendly_canvas.SetActive(false);
-        EndBattle(2);
+        if (enemyUnit.personality == personality.CURIOUS || enemyUnit.personality == personality.SOLEMN)
+        {
+            Upper_Text.text = enemyUnit.peaceful_button_2_response;
+            friendly_canvas.SetActive(false);
+            EndBattle(3);
+        }
+        else if (enemyUnit.personality == personality.WISE || enemyUnit.personality == personality.TIMID)
+        {
+            Upper_Text.text = "You know what? Take one";
+
+            friendly_canvas.SetActive(false);
+            skill_canvas.SetActive(true);
+            turns.SetHUD_Skills(enemyUnit);
+        }
+        else
+        {
+            Upper_Text.text = enemyUnit.peaceful_button_2_response;
+            friendly_canvas.SetActive(false);
+            EndBattle(2);
+        }
 
     }
 
     public void ON_aggresive_button_1()
     {
-        Upper_Text.text = aggresive_button_1_response;
-        if (pers == personality.AGGRESIVE)
+        
+        if (enemyUnit.personality == personality.AGGRESIVE || enemyUnit.personality == personality.WILD)
         {
             
             Upper_Text.text = "You know what? Take one";
@@ -172,16 +203,46 @@ public class Enemy_Reasoning : MonoBehaviour
             skill_canvas.SetActive(true);
             turns.SetHUD_Skills(enemyUnit);
         }
+        else if (enemyUnit.personality == personality.TIMID || enemyUnit.personality == personality.SOLEMN || enemyUnit.personality == personality.WISE)
+        {
 
+            Upper_Text.text = enemyUnit.aggresive_button_1_response;
+            aggresive_canvas.SetActive(false);
+            EndBattle(2);
+        }
+        else
+        {
+            Upper_Text.text = enemyUnit.aggresive_button_1_response;
+            aggresive_canvas.SetActive(false);
+            EndBattle(3);
+        }
     }
 
     public void ON_aggresive_button_2()
     {
-        Upper_Text.text = aggresive_button_2_response;
-        aggresive_canvas.SetActive(false);
-        EndBattle(3);
+        
+        if (enemyUnit.personality == personality.WILD || enemyUnit.personality == personality.CURIOUS)
+        {
 
+            Upper_Text.text = "You know what? Take one";
 
+            aggresive_canvas.SetActive(false);
+            skill_canvas.SetActive(true);
+            turns.SetHUD_Skills(enemyUnit);
+        }
+        else if (enemyUnit.personality == personality.AGGRESIVE || enemyUnit.personality == personality.SOLEMN)
+        {
+
+            Upper_Text.text = enemyUnit.aggresive_button_2_response;
+            aggresive_canvas.SetActive(false);
+            EndBattle(3);
+        }
+        else
+        {
+            Upper_Text.text = enemyUnit.aggresive_button_2_response;
+            aggresive_canvas.SetActive(false);
+            EndBattle(2);
+        }
     }
     public void OnSkill_Button(int x)
     {
@@ -208,8 +269,9 @@ public class Enemy_Reasoning : MonoBehaviour
     void EndBattle(int x)
     {
         
-        //Destroy(enemy);
-        //Destroy(enemyUnit);
+        //1 : Enemy concedes victory
+        //2 : Enemy attacks
+        //3 : Enemy runs
         skill_canvas.SetActive(false);
         turns.Finish_reasoning(x);
             

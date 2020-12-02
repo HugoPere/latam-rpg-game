@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3196968603407977460}
   - component: {fileID: 462048806919589574}
   - component: {fileID: -2244444597321177021}
+  - component: {fileID: 5067445246505118799}
+  - component: {fileID: 2966802926165025488}
   m_Layer: 0
   m_Name: lidevi
   m_TagString: Untagged
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2468261687449343749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children:
   - {fileID: 1469637627101965334}
   m_Father: {fileID: 0}
@@ -53,11 +55,17 @@ MonoBehaviour:
   Unit_Max_Mp: 0
   Unit_Current_Mp: 0
   Unit_Atk: 2
+  Unit_Current_Atk: 0
   Unit_Def: 1
+  Unit_Current_Def: 0
   Unit_Speed: 1
+  Unit_Current_Speed: 0
   Unit_Int: 1
+  Unit_Current_Int: 0
   Current_Exp: 0
+  Exp_cap: 0
   Exp_Value: 2
+  personality: 1
   Unit_Skill:
   - {fileID: 5769325332102958972, guid: e0cb42ad2459d0d4d9f9c9197a30717f, type: 3}
   - {fileID: 1499890602214741962, guid: 48c6c562577cade4bb1520dec8800da2, type: 3}
@@ -72,6 +80,16 @@ MonoBehaviour:
   Skill_Name_6: {fileID: 0}
   Skill_Name_7: {fileID: 0}
   Skill_Name_8: {fileID: 0}
+  peaceful_button_1: Smile
+  peaceful_button_2: Low down your weapon
+  aggresive_button_1: Yell
+  aggresive_button_2: Punch a Wall
+  peaceful_response: Hah! You look dumb!!!
+  peaceful_button_1_response: What a clown, DIE!!
+  peaceful_button_2_response: You stupid, DIE!!
+  aggresive_response: Oh ho hoo...
+  aggresive_button_1_response: Haha, I like ya!
+  aggresive_button_2_response: Holy....good bye!
 --- !u!114 &-2244444597321177021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +102,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb7fbe078ac6824faac7d4dc21496f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5067445246505118799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468261687449343749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20fcd3c47aa2ad44a3a4a06448fb049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 462048806919589574}
+  trigger_HP: 3
+  Skill_Counter: 0
+--- !u!212 &2966802926165025488
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2468261687449343749}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 2d84fb03af3aa804daaea251ea163ff6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8, y: 6}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &6817080462271412355
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1469637627101965334
 Transform:
   m_ObjectHideFlags: 0
@@ -110,7 +193,7 @@ Transform:
   m_GameObject: {fileID: 6817080462271412355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3196968603407977460}
   m_RootOrder: 0

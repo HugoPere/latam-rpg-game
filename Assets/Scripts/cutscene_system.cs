@@ -19,20 +19,22 @@ public class cutscene_system : MonoBehaviour
     public cutscenes[] Cutscene;
     
     int x = 0;
-    int y;
+    int z;
     
 
     public void continue_dialog()
     {
         x += 1;
-        show_dialog(y);
+        show_dialog(z);
+        Debug.Log("after clicking scene is..." + z);
     }
 
     public void show_dialog(int y) 
     {
+        z = y;
         if( x < Cutscene[y].dialogs.Length)
         {
-            
+            Debug.Log(y);
             image_left.sprite = Cutscene[y].Sprites_right[x];
             image_right.sprite = Cutscene[y].Sprites_left[x];
             Name.text = Cutscene[y].names[x];

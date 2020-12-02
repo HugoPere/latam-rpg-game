@@ -11,11 +11,21 @@ public class use_skill_from_menu : MonoBehaviour
     
     public void Use_Skill(int x)
     {
-        if (unit.Unit_Skill[x].Skill_Target == target.SELF)
+        if (unit.Unit_Skill[x].Skill_Target == target.SELF && unit.Unit_Skill[x].Skill_effect == Skill_effect.HEAL)
         {
-            unit.Use_Skill(x);
-            int text_number = unit.Unit_Skill[x].Skill_Damage * -1;
-            Skill_Message.text = "Recovered " + text_number + " points"; 
+            if (unit.Unit_Current_Hp == unit.Unit_Max_Hp)
+            {
+                Skill_Message.text = "No use using this now";
+            }
+            else
+            {
+                int cost = unit.Unit_Skill[x].Skill_Cost;
+                unit.Substract_MP(cost);
+                unit.Use_Skill(x);
+                int text_number = unit.Unit_Skill[x].Skill_Damage * 1;
+                Skill_Message.text = "Recovered " + text_number + " points";
+            }
+            
         }
         else
         {

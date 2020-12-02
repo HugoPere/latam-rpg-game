@@ -134,9 +134,18 @@ MonoBehaviour:
   Unit_Max_Mp: 30
   Unit_Current_Mp: 30
   Unit_Atk: 3
+  Unit_Current_Atk: 0
   Unit_Def: 1
+  Unit_Current_Def: 0
   Unit_Speed: 2
+  Unit_Current_Speed: 0
   Unit_Int: 2
+  Unit_Current_Int: 0
+  Current_Exp: 0
+  exp_to_level_up: 3
+  Exp_cap: 0
+  Exp_Value: 0
+  personality: 0
   Unit_Skill: []
   All_Skills: []
   type: 1
@@ -148,6 +157,16 @@ MonoBehaviour:
   Skill_Name_6: {fileID: 0}
   Skill_Name_7: {fileID: 0}
   Skill_Name_8: {fileID: 0}
+  peaceful_button_1: 
+  peaceful_button_2: 
+  aggresive_button_1: 
+  aggresive_button_2: 
+  peaceful_response: 
+  peaceful_button_1_response: 
+  peaceful_button_2_response: 
+  aggresive_response: 
+  aggresive_button_1_response: 
+  aggresive_button_2_response: 
 --- !u!114 &6763670533950560082
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ ScriptsOnlyBuild:
     - EnemyHud
     - Enemy_Reasoning
     - PlayerHud
-    - Reasoning
+    - ShakeBehaviour
     - Skills
     - Skills_All
     - Status_Hud
@@ -15,6 +15,7 @@ ScriptsOnlyBuild:
     - change_cursor
     - cutscene_system
     - cutscenes
+    - enemy_behaviour
     - movement_player
     - quit_demo
     - run_from_battle
@@ -65,7 +66,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11170}
+      Script: {instanceID: 11168}
     - Class: 114
       Script: {instanceID: 11222}
     - Class: 114
@@ -73,21 +74,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11264}
     - Class: 114
-      Script: {instanceID: 11300}
+      Script: {instanceID: 11314}
     - Class: 114
-      Script: {instanceID: 11316}
+      Script: {instanceID: 11334}
     - Class: 114
-      Script: {instanceID: 11336}
+      Script: {instanceID: 11376}
     - Class: 114
-      Script: {instanceID: 11378}
+      Script: {instanceID: 11402}
     - Class: 114
       Script: {instanceID: 11420}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 11634}
+      Script: {instanceID: 11632}
     - Class: 114
-      Script: {instanceID: 11660}
+      Script: {instanceID: 11658}
     - Class: 114
       Script: {instanceID: 11772}
     - Class: 114
@@ -97,7 +98,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11880}
     - Class: 114
-      Script: {instanceID: 12160}
+      Script: {instanceID: 12146}
+    - Class: 114
+      Script: {instanceID: 12162}
     - Class: 114
       Script: {instanceID: 12460}
     - Class: 114
@@ -105,19 +108,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12570}
     - Class: 114
-      Script: {instanceID: 12646}
+      Script: {instanceID: 12638}
     - Class: 114
-      Script: {instanceID: 12730}
+      Script: {instanceID: 12648}
     - Class: 114
-      Script: {instanceID: 12938}
+      Script: {instanceID: 12732}
     - Class: 114
-      Script: {instanceID: 13000}
+      Script: {instanceID: 12940}
     - Class: 114
-      Script: {instanceID: 13018}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 19882}
+      Script: {instanceID: 13020}
     - Class: 114
-      Script: {instanceID: 23270}
+      Script: {instanceID: 22756}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -160,21 +163,21 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11170}
+      Script: {instanceID: 11168}
     - Class: 114
-      Script: {instanceID: 11336}
+      Script: {instanceID: 11334}
     - Class: 114
-      Script: {instanceID: 11378}
+      Script: {instanceID: 11376}
     - Class: 114
       Script: {instanceID: 11772}
     - Class: 114
       Script: {instanceID: 11898}
     - Class: 114
-      Script: {instanceID: 12160}
+      Script: {instanceID: 12162}
     - Class: 114
-      Script: {instanceID: 12646}
+      Script: {instanceID: 12648}
     - Class: 114
-      Script: {instanceID: 13000}
+      Script: {instanceID: 13002}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -221,10 +224,16 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
+    className: Unit_Enemy
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
     className: skill_player_use
   - hash:
       serializedVersion: 2
-      Hash: baaa8a2287c61cbc694e5c3ba8656847
+      Hash: 81d220165b69164f6bae79fc65af2aaa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy_Reasoning
@@ -242,12 +251,6 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Reasoning
-  - hash:
-      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -260,7 +263,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: 58b2c9258cc8771b0c2cf9f57ba76784
+      Hash: 8216c5a4ceeef6733f38fc650c795feb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Unit
@@ -314,6 +317,12 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: b689ae7e9f7b5dce607066c488b1805b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: cutscenes
+  - hash:
+      serializedVersion: 2
       Hash: 26210072f47e9025fcd05a0d89b6bbc9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -360,12 +369,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: AspectRatioFitter
-  - hash:
-      serializedVersion: 2
-      Hash: 58d463b353ee89c3f487228447d386a6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: damage
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -416,6 +419,12 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: enemy_behaviour_lidevi
+  - hash:
+      serializedVersion: 2
       Hash: 7e3afad1ed204926ce7c4d1b734457e4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -434,7 +443,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 7422706d62de2c8d3cc8178eba067fee
+      Hash: e3d10b0b77549eb3deba11a2ab99a2bf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Skills
@@ -524,6 +533,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 92a4c21a95c3d05993111e7c31d15ab0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: start_cutscene
+  - hash:
+      serializedVersion: 2
       Hash: 5f1752ed2092162f016c19510c28a8b9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -540,12 +555,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
-  - hash:
-      serializedVersion: 2
-      Hash: 05847017340deb4e30124b925c339aa1
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: battle_scene
   - hash:
       serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
@@ -614,7 +623,7 @@ ScriptsOnlyBuild:
     className: Attack_enemy
   - hash:
       serializedVersion: 2
-      Hash: db2fcaecd7e2f64a4d0ed35f31ff089a
+      Hash: 1ca807223e7c2c9b83ced477379b21f4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Turns
@@ -636,6 +645,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioTrack
+  - hash:
+      serializedVersion: 2
+      Hash: a18d77f94d5a7b6eba46314d9e743300
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: enemy_behaviour
   - hash:
       serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
@@ -788,16 +803,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 92a4c21a95c3d05993111e7c31d15ab0
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: start_cutscene
-  - hash:
-      serializedVersion: 2
-      Hash: b689ae7e9f7b5dce607066c488b1805b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: cutscenes
+    className: ShakeBehaviour
   platform: 5
   scenePathNames:
   - Assets/Scenes/battle_scene.unity

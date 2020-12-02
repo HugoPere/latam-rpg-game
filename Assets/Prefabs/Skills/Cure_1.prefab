@@ -46,8 +46,11 @@ MonoBehaviour:
   id: 4
   Skill_Name: Cure 1
   Skill_Description: Restores a small amount of health
+  type: 0
   Skill_type: Spell
   Skill_Attribute: Cure
-  Skill_Damage: -10
+  Skill_Damage: 10
   Skill_Cost: 5
   Skill_Target: 1
+  Skill_effect: 1
+  Skill_Stat_Target: 0

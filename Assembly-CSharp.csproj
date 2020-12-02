@@ -63,24 +63,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Attack_enemy.cs" />
-    <Compile Include="Assets\Scripts\EnemyHud.cs" />
     <Compile Include="Assets\Scripts\Enemy_Behaviours\enemy_behaviour.cs" />
+    <Compile Include="Assets\Scripts\Enemy_Behaviours\enemy_behaviour_lidevi.cs" />
     <Compile Include="Assets\Scripts\Enemy_Reasoning.cs" />
-    <Compile Include="Assets\Scripts\PlayerHud.cs" />
-    <Compile Include="Assets\Scripts\Reasoning.cs" />
+    <Compile Include="Assets\Scripts\Hud\EnemyHud.cs" />
+    <Compile Include="Assets\Scripts\Hud\PlayerHud.cs" />
+    <Compile Include="Assets\Scripts\Hud\Status_Hud.cs" />
     <Compile Include="Assets\Scripts\Skill_Compendium.cs" />
     <Compile Include="Assets\Scripts\Skill_Usage.cs" />
-    <Compile Include="Assets\Scripts\Skills.cs" />
     <Compile Include="Assets\Scripts\Skills_All.cs" />
-    <Compile Include="Assets\Scripts\Status_Hud.cs" />
-    <Compile Include="Assets\Scripts\Turns.cs" />
-    <Compile Include="Assets\Scripts\Unit.cs" />
+    <Compile Include="Assets\Scripts\Unit_Enemy.cs" />
     <Compile Include="Assets\Scripts\call_status.cs" />
     <Compile Include="Assets\Scripts\change_cursor.cs" />
     <Compile Include="Assets\Scripts\color_panel.cs" />
     <Compile Include="Assets\Scripts\cutscene_system.cs" />
     <Compile Include="Assets\Scripts\cutscenes.cs" />
-    <Compile Include="Assets\Scripts\damage.cs" />
+    <Compile Include="Assets\Scripts\definitions\Skills.cs" />
+    <Compile Include="Assets\Scripts\definitions\Skills_ScriptableObject.cs" />
+    <Compile Include="Assets\Scripts\definitions\Turns.cs" />
+    <Compile Include="Assets\Scripts\definitions\Unit.cs" />
     <Compile Include="Assets\Scripts\enemy_info.cs" />
     <Compile Include="Assets\Scripts\kill_enemy.cs" />
     <Compile Include="Assets\Scripts\movement.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Assets\Scripts\start_cutscene.cs" />
     <Compile Include="Assets\Scripts\stats.cs" />
     <Compile Include="Assets\Scripts\use_skill_from_menu.cs" />
+    <Compile Include="Assets\ShakeBehaviour.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Hugo/Desktop/proyectos unity/RPG - Test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4800410595366190966}
   - component: {fileID: 7541859149126236740}
+  - component: {fileID: 1467338368672023516}
   m_Layer: 0
   m_Name: Snakee
   m_TagString: Untagged
@@ -137,7 +138,9 @@ MonoBehaviour:
   Unit_Speed: 3
   Unit_Int: 1
   Current_Exp: 0
+  Exp_cap: 0
   Exp_Value: 2
+  personality: 3
   Unit_Skill:
   - {fileID: 1499890602214741962, guid: 48c6c562577cade4bb1520dec8800da2, type: 3}
   - {fileID: 959810719617284196, guid: a9f9d98da5600b44aa8acfa8e5c88a43, type: 3}
@@ -152,3 +155,28 @@ MonoBehaviour:
   Skill_Name_6: {fileID: 0}
   Skill_Name_7: {fileID: 0}
   Skill_Name_8: {fileID: 0}
+  peaceful_button_1: Kneel
+  peaceful_button_2: Share Knowledge
+  aggresive_button_1: Get Closer
+  aggresive_button_2: 'Insult '
+  peaceful_response: Ah, let's see how this goes
+  peaceful_button_1_response: You are a wise man
+  peaceful_button_2_response: How interesting
+  aggresive_response: That's not a proper response
+  aggresive_button_1_response: I'll go away now
+  aggresive_button_2_response: You will regret this
+--- !u!114 &1467338368672023516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5513128239053726599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a20fcd3c47aa2ad44a3a4a06448fb049, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 7541859149126236740}
+  trigger_HP: 2
+  Skill_Counter: 0
