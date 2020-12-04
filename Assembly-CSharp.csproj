@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\stats.cs" />
     <Compile Include="Assets\Scripts\use_skill_from_menu.cs" />
     <Compile Include="Assets\ShakeBehaviour.cs" />
+    <Compile Include="Assets\Start_Game.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Hugo/Desktop/proyectos unity/RPG - Test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

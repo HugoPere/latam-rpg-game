@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6437315674fd57469721c9aed49458b, type: 3}
+  m_Name: 04-Cure 1
+  m_EditorClassIdentifier: 
+  id: 4
+  Skill_Name: Cure 1
+  Skill_Description: Restores 10 pts
+  type: 0
+  Skill_type: Spell
+  Skill_Attribute: Cure
+  Skill_Damage: 10
+  Skill_Cost: 5
+  Skill_Target: 1
+  Skill_effect: 1
+  Skill_Stat_Target: 0

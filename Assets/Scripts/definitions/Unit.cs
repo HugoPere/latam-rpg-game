@@ -50,6 +50,8 @@ public class Unit : MonoBehaviour
    
     int Skill_id;
 
+    public AudioSource hit_sound;
+
     //USED ONLY FOR ENEMY
     //Button Texts
 
@@ -204,7 +206,12 @@ public class Unit : MonoBehaviour
         }
     }
 
-    
+    public void Hit_Sound()
+    {
+        Debug.Log("kapow");
+        hit_sound.Play();
+        return;
+    }
 
-   
+    
 }

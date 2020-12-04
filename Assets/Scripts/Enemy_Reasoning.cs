@@ -61,16 +61,14 @@ public class Enemy_Reasoning : MonoBehaviour
     //public Text Reason_first_first_button;
 
 
-    private void Start()
+   
+
+    public void reasoning_start()
     {
         att = attitude.STARTING;
         enemy = turns.enemy;
         //EnemyGO = Instantiate(enemy);
         enemyUnit = enemy.GetComponent<Unit>();
-    }
-
-    public void reasoning_start()
-    {
         if (pers == personality.SAVAGE && pers == personality.BOSS)
         {
             
@@ -149,19 +147,19 @@ public class Enemy_Reasoning : MonoBehaviour
         {
             Upper_Text.text = enemyUnit.peaceful_button_1_response;
             friendly_canvas.SetActive(false);
-            EndBattle(3);
+            StartCoroutine(EndBattle(3));
         }
         else if (enemyUnit.personality == personality.WISE || enemyUnit.personality == personality.TIMID)
         {
             Upper_Text.text = enemyUnit.peaceful_button_1_response;
             friendly_canvas.SetActive(false);
-            EndBattle(3);
+            StartCoroutine(EndBattle(3));
         }
         else
         {
             Upper_Text.text = enemyUnit.peaceful_button_1_response;
             friendly_canvas.SetActive(false);
-            EndBattle(2);
+            StartCoroutine(EndBattle(2));
         }
 
     }
@@ -172,7 +170,7 @@ public class Enemy_Reasoning : MonoBehaviour
         {
             Upper_Text.text = enemyUnit.peaceful_button_2_response;
             friendly_canvas.SetActive(false);
-            EndBattle(3);
+            StartCoroutine(EndBattle(3));
         }
         else if (enemyUnit.personality == personality.WISE || enemyUnit.personality == personality.TIMID)
         {
@@ -186,7 +184,7 @@ public class Enemy_Reasoning : MonoBehaviour
         {
             Upper_Text.text = enemyUnit.peaceful_button_2_response;
             friendly_canvas.SetActive(false);
-            EndBattle(2);
+            StartCoroutine(EndBattle(2));
         }
 
     }
@@ -208,13 +206,13 @@ public class Enemy_Reasoning : MonoBehaviour
 
             Upper_Text.text = enemyUnit.aggresive_button_1_response;
             aggresive_canvas.SetActive(false);
-            EndBattle(2);
+            StartCoroutine(EndBattle(2));
         }
         else
         {
             Upper_Text.text = enemyUnit.aggresive_button_1_response;
             aggresive_canvas.SetActive(false);
-            EndBattle(3);
+            StartCoroutine(EndBattle(3));
         }
     }
 
@@ -235,13 +233,13 @@ public class Enemy_Reasoning : MonoBehaviour
 
             Upper_Text.text = enemyUnit.aggresive_button_2_response;
             aggresive_canvas.SetActive(false);
-            EndBattle(3);
+            StartCoroutine(EndBattle(3));
         }
         else
         {
             Upper_Text.text = enemyUnit.aggresive_button_2_response;
             aggresive_canvas.SetActive(false);
-            EndBattle(2);
+            StartCoroutine(EndBattle(2));
         }
     }
     public void OnSkill_Button(int x)
@@ -266,9 +264,9 @@ public class Enemy_Reasoning : MonoBehaviour
 
     }
 
-    void EndBattle(int x)
+    IEnumerator EndBattle(int x)
     {
-        
+        yield return new WaitForSeconds(1f);
         //1 : Enemy concedes victory
         //2 : Enemy attacks
         //3 : Enemy runs

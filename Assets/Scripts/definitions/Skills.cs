@@ -6,8 +6,8 @@ public enum target { ENEMY, SELF, SELF_ALL }
 public enum Skill_effect { ATTACK, HEAL, BUFF}
 public enum skill_type { SPELL, SONG, LAND, SUMMON}
 public enum stat_target { NONE, ATTACK, DEFENSE, SPEED, INTELLIGENCE};
-
-public class Skills : MonoBehaviour
+[CreateAssetMenu(fileName = "New Skill", menuName = "Skill")]
+public class Skills : ScriptableObject
 {
     public int id;
     public string Skill_Name;
@@ -20,6 +20,7 @@ public class Skills : MonoBehaviour
     public target Skill_Target;
     public Skill_effect Skill_effect;
     public stat_target Skill_Stat_Target;
+    /*
     public Skills(Skills s)
     {
         id = s.id;
@@ -33,5 +34,5 @@ public class Skills : MonoBehaviour
         Skill_Target = s.Skill_Target;
         Skill_effect = s.Skill_effect;
         Skill_Stat_Target = s.Skill_Stat_Target;        
-    }
+    }*/
 }

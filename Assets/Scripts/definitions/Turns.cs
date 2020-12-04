@@ -57,6 +57,10 @@ public class Turns : MonoBehaviour
     public Text Skill_Type_3;
     public Text Skill_Description_3;
 
+    //MUSIC (MAKE INTO IT'S OWN SCRIPT)
+    public AudioSource overworld_music;
+    public AudioSource battle_music;
+
     void Start()
     {
         state = BattleState.START;
@@ -72,7 +76,7 @@ public class Turns : MonoBehaviour
     IEnumerator SetupBattle()
     {
 
-        
+        state = BattleState.START;
         GameObject PlayerGO =player;
         playerUnit = PlayerGO.GetComponent<Unit>();
         //SETSTATS
@@ -91,8 +95,10 @@ public class Turns : MonoBehaviour
         enemyUnit.Unit_Current_Speed = enemyUnit.Unit_Speed;
         //SETSTATS
         enemy_behav = EnemyGO.GetComponent<enemy_behaviour>();
-        
 
+        overworld_music.Stop();
+        battle_music.Play();
+        
         dialogueText.text = "A " + enemyUnit.Unit_Name + " draws near";
 
         playerhud.SetHUD(playerUnit);
@@ -106,8 +112,11 @@ public class Turns : MonoBehaviour
     {
         Debug.Log("STAT ATTACK IS " + playerUnit.Unit_Atk);
         dialogueText.text = "A hit!";
+        playerUnit.Hit_Sound();
+        //
         //BLINKING ANIMATION
         int blinking = 0;
+        
         while (blinking < 3)
         {
 
@@ -118,6 +127,7 @@ public class Turns : MonoBehaviour
             blinking += 1;
         }
         //END BLINKING ANIMATION
+        //
         int base_hit = playerUnit.Unit_Current_Atk;
 
         Random.seed = System.DateTime.Now.Millisecond;
@@ -176,8 +186,11 @@ public class Turns : MonoBehaviour
             yield return new WaitForSeconds(1f);
             damage = enemyUnit.Unit_Atk;
             Debug.Log("I did a physical");
+            enemyUnit.Hit_Sound();
             dialogueText.text = "You suffer " + damage + " points of damage";
             isDead = playerUnit.TakeDamage(damage);
+            Debug.Log("Kapow enemigo");
+            
             Player_Camera.TriggerShake();
         }
         else
@@ -189,20 +202,16 @@ public class Turns : MonoBehaviour
             dialogueText.text = enemyUnit.Unit_Name + " casts " + enemyUnit.Unit_Skill[selected_skill].Skill_Name;
             yield return new WaitForSeconds(1f);
 
-            if (enemyUnit.Unit_Skill[selected_skill].id == 4)
+            if (enemyUnit.Unit_Skill[selected_skill].Skill_Target == target.SELF)
             {
-                
-                damage = enemyUnit.Unit_Skill[selected_skill].Skill_Damage;
-                if(enemyUnit.Unit_Current_Hp > enemyUnit.Unit_Max_Hp)
-                {
-                    enemyUnit.Unit_Current_Hp = enemyUnit.Unit_Max_Hp;
-                }
-                Debug.Log("I did a heal");
-                isDead = playerUnit.TakeDamage(0);
+
+               isDead = enemyUnit.Use_Skill(selected_skill);
             }
             else
             {
+                enemyUnit.Hit_Sound();
                 damage = enemyUnit.Unit_Skill[selected_skill].Skill_Damage;
+                Player_Camera.TriggerShake();
                 dialogueText.text = "You suffer " + damage + " points of damage";
                 yield return new WaitForSeconds(1f);
                 Debug.Log("I did a magical");
@@ -210,7 +219,7 @@ public class Turns : MonoBehaviour
             }
             
         }
-        Debug.Log(damage);
+        
         
         playerhud.SetHUD(playerUnit);
 
@@ -270,6 +279,8 @@ public class Turns : MonoBehaviour
             overworld_canvas.SetActive(true);
             encounter.SetActive(false);
             Destroy(enc_trigger);
+            overworld_music.Play();
+            battle_music.Stop();
             if (enemyUnit.type == type.BOSS)
             {
                 SceneManager.LoadScene("end_demo");
