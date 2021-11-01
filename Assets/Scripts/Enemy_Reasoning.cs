@@ -100,6 +100,7 @@ public class Enemy_Reasoning : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Upper_Text.text = "Wich approach?";
         Reasoning_Canvas.SetActive(true);
+        Debug.Log("IM HERE");
     }
 
     //THESE BUTTONS AND COROUTEINES ARE ONLY WHILE ON REASONING MODE
@@ -254,11 +255,14 @@ public class Enemy_Reasoning : MonoBehaviour
         bool skill_given = playerUnit.Give_Skills(x);
         if (skill_given == true)
         {
-            Upper_Text.text = "Habilidad concedida";
+            Upper_Text.text = "Skill learned!";
+            Debug.Log("Voy a EndBattle");
+            StartCoroutine(EndBattle(1));
         }
         else
         {
-            Upper_Text.text = "Espacios llenos";
+            Upper_Text.text = "Can't learn more skills";
+            StartCoroutine(EndBattle(1));
         }
         EndBattle(1);
 
@@ -266,6 +270,7 @@ public class Enemy_Reasoning : MonoBehaviour
 
     IEnumerator EndBattle(int x)
     {
+        Debug.Log("IM DONE");
         yield return new WaitForSeconds(1f);
         //1 : Enemy concedes victory
         //2 : Enemy attacks

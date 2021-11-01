@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Hud\EnemyHud.cs" />
     <Compile Include="Assets\Scripts\Hud\PlayerHud.cs" />
     <Compile Include="Assets\Scripts\Hud\Status_Hud.cs" />
+    <Compile Include="Assets\Scripts\New Folder\transport.cs" />
     <Compile Include="Assets\Scripts\Skill_Compendium.cs" />
     <Compile Include="Assets\Scripts\Skill_Usage.cs" />
     <Compile Include="Assets\Scripts\Skills_All.cs" />

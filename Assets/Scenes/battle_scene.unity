@@ -260,6 +260,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: encounter_trigger (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8711860136065255142, guid: 3b08ffb09e2940049bf162ef454b022f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8711860136065255149, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
       propertyPath: player
@@ -1183,6 +1188,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: encounter_trigger (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8711860136065255142, guid: 3b08ffb09e2940049bf162ef454b022f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8711860136065255149, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
       propertyPath: player
@@ -1508,6 +1518,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: encounter_trigger (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711860136065255142, guid: 3b08ffb09e2940049bf162ef454b022f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8711860136065255149, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
@@ -2267,7 +2282,7 @@ PrefabInstance:
     - target: {fileID: 8711860136065255138, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.27
+      value: 17.45
       objectReference: {fileID: 0}
     - target: {fileID: 8711860136065255138, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
@@ -2302,7 +2317,7 @@ PrefabInstance:
     - target: {fileID: 8711860136065255138, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8711860136065255138, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
@@ -2322,7 +2337,7 @@ PrefabInstance:
     - target: {fileID: 8711860136065255142, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
       propertyPath: m_Name
-      value: cutscene_trigger
+      value: cutscene_trigger_boss
       objectReference: {fileID: 0}
     - target: {fileID: 8711860136065255142, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
@@ -2687,6 +2702,7 @@ MonoBehaviour:
   cutscene_canvas: {fileID: 1727138222}
   overworld_canvas: {fileID: 685136216}
   cutscene_system: {fileID: 1727138223}
+  self: {fileID: 885206140}
   choice: 0
 --- !u!1001 &983707742
 PrefabInstance:
@@ -2978,6 +2994,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 16cd3742844df02438a58d1bd6471e12,
         type: 2}
+    - target: {fileID: 8540528903987713079, guid: 868818fd125e9df4ea6dfebc6659fe08,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8544367891156119489, guid: 868818fd125e9df4ea6dfebc6659fe08,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3367,6 +3388,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: encounter_trigger (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8711860136065255142, guid: 3b08ffb09e2940049bf162ef454b022f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8711860136065255149, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
       propertyPath: player
@@ -3564,6 +3590,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: encounter_trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 8711860136065255142, guid: 3b08ffb09e2940049bf162ef454b022f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8711860136065255149, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
       propertyPath: player
@@ -3716,6 +3747,7 @@ MonoBehaviour:
   cutscene_canvas: {fileID: 1727138222}
   overworld_canvas: {fileID: 685136216}
   cutscene_system: {fileID: 1727138223}
+  self: {fileID: 1215775581}
   choice: 1
 --- !u!1 &1323762731
 GameObject:
@@ -3993,6 +4025,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: encounter_trigger (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711860136065255142, guid: 3b08ffb09e2940049bf162ef454b022f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8711860136065255149, guid: 3b08ffb09e2940049bf162ef454b022f,
         type: 3}
@@ -6437,7 +6474,7 @@ PrefabInstance:
     - target: {fileID: 3153719667603150214, guid: 2747348ab5722744393b4bf83623920e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3153719667603150214, guid: 2747348ab5722744393b4bf83623920e,
         type: 3}
@@ -6572,7 +6609,7 @@ PrefabInstance:
     - target: {fileID: 8396379090813606222, guid: 5af366eaf11e22340846eea7cfa2dc19,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.64
+      value: -2.3
       objectReference: {fileID: 0}
     - target: {fileID: 8396379090813606222, guid: 5af366eaf11e22340846eea7cfa2dc19,
         type: 3}
@@ -6582,7 +6619,7 @@ PrefabInstance:
     - target: {fileID: 8396379090813606222, guid: 5af366eaf11e22340846eea7cfa2dc19,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.72
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8396379090813606222, guid: 5af366eaf11e22340846eea7cfa2dc19,
         type: 3}

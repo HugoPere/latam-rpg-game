@@ -7,6 +7,6 @@ public class Start_Game : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("battle_scene");
+        SceneManager.LoadScene("overworld_test");
     }
 }

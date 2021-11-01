@@ -20,6 +20,7 @@ public class Skills : ScriptableObject
     public target Skill_Target;
     public Skill_effect Skill_effect;
     public stat_target Skill_Stat_Target;
+    public Sprite animation;
     /*
     public Skills(Skills s)
     {

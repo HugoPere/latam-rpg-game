@@ -20,21 +20,23 @@ public class movement : MonoBehaviour {
         player = GetComponent <CharacterController>();
 
     }
-
+    public GameObject overworld;
     // Update is called once per frame
     void Update()
     {
-        horizontalmove = Input.GetAxis("Horizontal");
-        verticalmove = Input.GetAxis("Vertical");
-        //player.Move(new Vector3(horizontalmove, 0, verticalmove) * playerspeed * Time.deltaTime);
-        if (Input.GetKeyDown(forward))
+        if (overworld.activeSelf == true) {
+            horizontalmove = Input.GetAxis("Horizontal");
+            verticalmove = Input.GetAxis("Vertical");
+            player.Move(new Vector3(horizontalmove, 0, verticalmove) * playerspeed * Time.deltaTime);
+        }
+        /*if (Input.GetKeyDown(forward))
         {
             player.Move(transform.TransformDirection(Vector3.forward) * playerspeed * Time.deltaTime);
         }
         if (Input.GetKeyDown(forward))
         {
             player.Move(transform.TransformDirection(Vector3.back) * playerspeed * Time.deltaTime);
-        }
+        }*/
 
 
     }

@@ -13,20 +13,23 @@ public class cutscene_system : MonoBehaviour
 
     public GameObject cutscene_canvas;
     public GameObject overworld_canvas;
-
-    public GameObject cutscene_trigger;
+    
 
     public cutscenes[] Cutscene;
     
     int x = 0;
     int z;
-    
+
+    public void start_dialog(int choice)
+    {
+        x = 0;
+        show_dialog(choice);
+    }
 
     public void continue_dialog()
     {
         x += 1;
         show_dialog(z);
-        Debug.Log("after clicking scene is..." + z);
     }
 
     public void show_dialog(int y) 
@@ -34,7 +37,7 @@ public class cutscene_system : MonoBehaviour
         z = y;
         if( x < Cutscene[y].dialogs.Length)
         {
-            Debug.Log(y);
+            Debug.Log("estoy en escena");
             image_left.sprite = Cutscene[y].Sprites_right[x];
             image_right.sprite = Cutscene[y].Sprites_left[x];
             Name.text = Cutscene[y].names[x];
@@ -45,7 +48,6 @@ public class cutscene_system : MonoBehaviour
         {
             cutscene_canvas.SetActive(false);
             overworld_canvas.SetActive(true);
-            cutscene_trigger.SetActive(false);
         }
         
     }

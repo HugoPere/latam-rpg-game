@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/end_demo.unity
     guid: b5533fd3a00828a43aa8222167dcc15b
+  - enabled: 1
+    path: Assets/Scenes/overworld_test.unity
+    guid: 140e50032ef351c44b5cd35c048ad2f3
   m_configObjects: {}

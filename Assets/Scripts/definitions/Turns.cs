@@ -368,6 +368,7 @@ public class Turns : MonoBehaviour
             }
             else
             {
+                Debug.Log("Reasoning Starts");
                 state = BattleState.BATTLING;
                 PlayerHud_bg.SetActive(false);
                 StartCoroutine(PlayerReason());
